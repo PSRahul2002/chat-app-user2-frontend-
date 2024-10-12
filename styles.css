@@ -1,4 +1,4 @@
-/* General styling with a romantic, elegant theme */
+/* General styling with the previous romantic theme */
 body {
     font-family: 'Cursive', Arial, sans-serif;
     background-color: #fff0f5; /* Light pink background */
@@ -40,7 +40,7 @@ body {
     max-width: 75%;
     word-wrap: break-word;
     word-break: break-word;
-    font-size: 16px;
+    font-size: 16px; /* Previous font sizing */
     line-height: 1.4;
     background-color: #ffe4e1; /* Light pink for romantic tone */
     align-self: flex-end;
@@ -61,8 +61,12 @@ body {
     padding: 15px;
     background-color: #fff;
     border-top: 2px solid #ffc0cb; /* Soft pink border */
-    position: sticky; /* Keeps it fixed at the bottom */
-    bottom: 0; /* Sticks it to the bottom */
+    position: fixed; /* Keep the input box and button locked at the bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 500px;
+    margin: auto;
 }
 
 #messageText {
@@ -70,7 +74,7 @@ body {
     padding: 15px;
     border: 2px solid #ffb6c1;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 16px; /* Previous font size */
     background-color: #fffaf0;
     outline: none;
     margin-right: 10px;
@@ -95,13 +99,19 @@ button:hover {
 
 #deleteUser2Messages {
     padding: 12px;
-    margin: 10px auto;
     background-color: #ff3333;
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    display: none;
+    display: block; /* Ensure it's visible for User1 */
+    position: fixed;
+    bottom: 80px; /* Above the message input */
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 500px;
+    text-align: center;
 }
 
 /* Mobile responsiveness */
