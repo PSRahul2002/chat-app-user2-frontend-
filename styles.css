@@ -1,6 +1,6 @@
-/* General styling with the previous romantic theme */
+/* General styling with a normal, elegant font theme */
 body {
-    font-family: 'Cursive', Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Normal font style */
     background-color: #fff0f5; /* Light pink background */
     margin: 0;
     padding: 0;
@@ -40,7 +40,7 @@ body {
     max-width: 75%;
     word-wrap: break-word;
     word-break: break-word;
-    font-size: 16px; /* Previous font sizing */
+    font-size: 16px; /* Normal font sizing */
     line-height: 1.4;
     background-color: #ffe4e1; /* Light pink for romantic tone */
     align-self: flex-end;
@@ -74,7 +74,7 @@ body {
     padding: 15px;
     border: 2px solid #ffb6c1;
     border-radius: 30px;
-    font-size: 16px; /* Previous font size */
+    font-size: 16px; /* Normal font size */
     background-color: #fffaf0;
     outline: none;
     margin-right: 10px;
