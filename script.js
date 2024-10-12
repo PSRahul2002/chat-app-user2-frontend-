@@ -1,5 +1,5 @@
 let currentUserId = 1;  // Change to 2 for User2
-        let ws = new WebSocket(`https://chat-app-backend-1-9yde.onrender.com/ws/${currentUserId}`);
+        let ws = new WebSocket(`https://chat-app-backend-2-9wz8.onrender.com/ws/${currentUserId}`);
 
         // Show the delete button for User1
         if (currentUserId === 1) {
@@ -95,7 +95,7 @@ let currentUserId = 1;  // Change to 2 for User2
             if (currentUserId === 1) {
                 
                 
-                fetch('https://chat-app-backend-1-9yde.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
+                fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
