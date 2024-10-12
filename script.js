@@ -1,5 +1,5 @@
 let currentUserId = 1;  // Change to 2 for User2
-        let ws = new WebSocket(`https://chat-app-backend-2-9wz8.onrender.com/ws/${currentUserId}`);
+        let ws = new WebSocket(`wss://chat-app-backend-2-9wz8.onrender.com/ws/${currentUserId}`);
 
         // Show the delete button for User1
         if (currentUserId === 1) {
