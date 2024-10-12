@@ -62,7 +62,7 @@ body {
     background-color: #fff;
     border-top: 2px solid #ffc0cb; /* Soft pink border */
     position: fixed; /* Keep the input box and button locked at the bottom */
-    bottom: 0;
+    bottom: 60px; /* Adjust to give space for the delete button */
     left: 0;
     right: 0;
     max-width: 500px;
@@ -105,12 +105,12 @@ button:hover {
     border-radius: 30px;
     cursor: pointer;
     display: block; /* Ensure it's visible for User1 */
-    position: fixed;
-    bottom: 80px; /* Above the message input */
+    position: fixed; /* Keep the delete button below the input */
+    bottom: 10px; /* Position it below the input box */
     left: 0;
     right: 0;
-    margin: auto;
     max-width: 500px;
+    margin: auto;
     text-align: center;
 }
 
