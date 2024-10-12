@@ -90,7 +90,7 @@ let currentUserId = 1;  // Change to 2 for User2
         // Delete User2's messages (available only to User1)
 
         function deleteUser2Messages() {
-            alert("This will delete the chat history of user-2");
+            //alert("This will delete the chat history of user-2");
             // Only User1 can trigger the deletion
             if (currentUserId === 1) {
                 
