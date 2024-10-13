@@ -1,6 +1,6 @@
 /* General styling with a normal, elegant font theme */
 body {
-    font-family: Arial, sans-serif; /* Normal font style */
+    font-family: Arial, sans-serif;
     background-color: #fff0f5; /* Light pink background */
     margin: 0;
     padding: 0;
@@ -24,11 +24,11 @@ body {
 }
 
 #messages {
-    flex-grow: 1; /* Allows this section to grow and take up most of the space */
+    flex-grow: 1;
     padding: 15px;
-    background-color: #f8e1e9; /* Light floral background */
-    border-bottom: 2px solid #ffc0cb; /* Soft pink border */
-    overflow-y: auto; /* Only the messages section will be scrollable */
+    background-color: #f8e1e9;
+    border-bottom: 2px solid #ffc0cb;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -40,9 +40,9 @@ body {
     max-width: 75%;
     word-wrap: break-word;
     word-break: break-word;
-    font-size: 16px; /* Normal font sizing */
+    font-size: 16px;
     line-height: 1.4;
-    background-color: #ffe4e1; /* Light pink for romantic tone */
+    background-color: #ffe4e1;
     align-self: flex-end;
 }
 
@@ -52,41 +52,36 @@ body {
 }
 
 .message.you {
-    background-color: #ffc1e3; /* Light pink with slight lavender tone for your messages */
+    background-color: #ffc1e3;
 }
 
 #input-container {
     display: flex;
+    justify-content: space-between; /* Input and Send button on one line */
     align-items: center;
     padding: 15px;
     background-color: #fff;
-    border-top: 2px solid #ffc0cb; /* Soft pink border */
-    position: fixed; /* Keep the input box and button locked at the bottom */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 500px;
-    margin: auto;
+    border-top: 2px solid #ffc0cb;
 }
 
 #messageText {
-    flex-grow: 1; /* Takes up available space */
+    flex-grow: 1;
     padding: 15px;
     border: 2px solid #ffb6c1;
     border-radius: 30px;
-    font-size: 16px; /* Normal font size */
+    font-size: 16px;
     background-color: #fffaf0;
     outline: none;
     margin-right: 10px;
 }
 
 button {
-    padding: 15px 30px; /* Bigger button */
-    background-color: #ff69b4; /* Hot pink button */
+    padding: 12px 20px;
+    background-color: #ff69b4;
     border: none;
     border-radius: 30px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -94,7 +89,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff1493; /* Darker pink on hover */
+    background-color: #ff1493;
 }
 
 #deleteUser2Messages {
@@ -105,11 +100,7 @@ button:hover {
     border-radius: 30px;
     cursor: pointer;
     display: block; /* Ensure it's visible for User1 */
-    position: fixed;
-    bottom: 80px; /* Above the message input */
-    left: 0;
-    right: 0;
-    margin: auto;
+    margin: 15px auto; /* Centered below input container */
     max-width: 500px;
     text-align: center;
 }
@@ -129,14 +120,18 @@ button:hover {
         font-size: 14px;
     }
 
+    #input-container {
+        padding: 10px;
+    }
+
     #messageText {
         padding: 12px;
         font-size: 14px;
     }
 
     button {
-        padding: 12px 20px; /* Still larger for mobile */
-        font-size: 16px;
+        padding: 10px 15px; /* Smaller for mobile */
+        font-size: 14px;
     }
 
     #deleteUser2Messages {
