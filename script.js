@@ -85,24 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // });
 
     // Delete User2's messages (available only to User1)
-    function deleteUser2Messages() {
-        fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.statusText}`);
-            }
-            return response.json();  // Parse the JSON response
-        })
-        .then(data => {
-            console.log("Delete request successful:", data);  // Log success
-        })
-        .catch(error => {
-            console.error("Error deleting messages:", error);
-        });
-    }
 });
+
+function deleteUser2Messages() {
+    fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.statusText}`);
+        }
+        return response.json();  // Parse the JSON response
+    })
+    .then(data => {
+        console.log("Delete request successful:", data);  // Log success
+    })
+    .catch(error => {
+        console.error("Error deleting messages:", error);
+    });
+}
