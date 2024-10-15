@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Add event listener for the Send button
-    document.getElementById("sendButton").addEventListener("click", function() {
-        sendMessage();
-    });
+    // document.getElementById("sendButton").addEventListener("click", function() {
+    //     sendMessage();
+    // });
 
     // Delete User2's messages (available only to User1)
     function deleteUser2Messages() {
