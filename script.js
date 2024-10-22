@@ -7,29 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("deleteUser2Messages").style.display = "block";
     }
 
-    // Function to append messages to the message list with correct CSS and username
-    function appendMessage(userId, messageText, currentUserId) {
-        let messages = document.getElementById('messages');
-        let message = document.createElement('div');
-        message.className = 'message';
-
-        // Determine if the message is from the current user or another user
-        if (userId === currentUserId) {
-            message.classList.add('you');  // Apply 'you' class for the current user
-            message.textContent = `You: ${messageText}`;  // Show 'You' for current user's messages
-        } else {
-            message.classList.add('other');  // Apply 'other' class for other users
-            let username = userId === 1 ? 'User1' : 'User2';  // Map user_id to "User1" or "User2"
-            message.textContent = `${username}: ${messageText}`;  // Show 'User1' or 'User2' for others
-        }
-
-        // Append the message to the messages container
-        messages.appendChild(message);
-        
-        // Scroll to the latest message
-        messages.scrollTop = messages.scrollHeight;
-    }
-
     // WebSocket message handler to receive messages from the server
     ws.onmessage = function(event) {
         try {
@@ -83,6 +60,29 @@ function sendMessage() {
         // Clear the input field
         input.value = '';
     }
+}
+
+// Function to append messages to the message list with correct CSS and username
+function appendMessage(userId, messageText, currentUserId) {
+    let messages = document.getElementById('messages');
+    let message = document.createElement('div');
+    message.className = 'message';
+
+    // Determine if the message is from the current user or another user
+    if (userId === currentUserId) {
+        message.classList.add('you');  // Apply 'you' class for the current user
+        message.textContent = `You: ${messageText}`;  // Show 'You' for current user's messages
+    } else {
+        message.classList.add('other');  // Apply 'other' class for other users
+        let username = userId === 1 ? 'User1' : 'User2';  // Map user_id to "User1" or "User2"
+        message.textContent = `${username}: ${messageText}`;  // Show 'User1' or 'User2' for others
+    }
+
+    // Append the message to the messages container
+    messages.appendChild(message);
+    
+    // Scroll to the latest message
+    messages.scrollTop = messages.scrollHeight;
 }
 
 // Delete User2's messages (available only to User1)
