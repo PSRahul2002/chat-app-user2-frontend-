@@ -53,6 +53,19 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Error parsing WebSocket message:", e);
         }
     };
+    // Add event listener for 'Enter' key press on the input field
+    document.getElementById('messageText').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();  // Prevent form submission
+            sendMessage();
+        }
+    });
+    
+    //Add event listener for the Send button
+    document.getElementById("sendButton").addEventListener("click", function() {
+        sendMessage();
+    });
+
 });
 
 // Handle sending messages
@@ -71,20 +84,6 @@ function sendMessage() {
         input.value = '';
     }
 }
-
-// Add event listener for 'Enter' key press on the input field
-document.getElementById('messageText').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();  // Prevent form submission
-        sendMessage();
-    }
-});
-
-//Add event listener for the Send button
-document.getElementById("sendButton").addEventListener("click", function() {
-    sendMessage();
-});
-
 
 // Delete User2's messages (available only to User1)
 function deleteUser2Messages() {
