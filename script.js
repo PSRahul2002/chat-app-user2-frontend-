@@ -53,40 +53,40 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Error parsing WebSocket message:", e);
         }
     };
-
-    // Handle sending messages
-    function sendMessage() {
-        let input = document.getElementById("messageText");
-        let message = input.value;
-
-        if (message) {
-            // Display the message on the page before sending it
-            appendMessage(currentUserId, message, currentUserId);  // Show 'You' for the current user's message
-
-            // Send the message via WebSocket
-            ws.send(JSON.stringify({ user_id: currentUserId, message }));
-
-            // Clear the input field
-            input.value = '';
-        }
-    }
-
-    // Add event listener for 'Enter' key press on the input field
-    document.getElementById('messageText').addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();  // Prevent form submission
-            sendMessage();
-        }
-    });
-
-    // Add event listener for the Send button
-    // document.getElementById("sendButton").addEventListener("click", function() {
-    //     sendMessage();
-    // });
-
-    // Delete User2's messages (available only to User1)
 });
 
+// Handle sending messages
+function sendMessage() {
+    let input = document.getElementById("messageText");
+    let message = input.value;
+
+    if (message) {
+        // Display the message on the page before sending it
+        appendMessage(currentUserId, message, currentUserId);  // Show 'You' for the current user's message
+
+        // Send the message via WebSocket
+        ws.send(JSON.stringify({ user_id: currentUserId, message }));
+
+        // Clear the input field
+        input.value = '';
+    }
+}
+
+// Add event listener for 'Enter' key press on the input field
+document.getElementById('messageText').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent form submission
+        sendMessage();
+    }
+});
+
+// Add event listener for the Send button
+// document.getElementById("sendButton").addEventListener("click", function() {
+//     sendMessage();
+// });
+
+
+// Delete User2's messages (available only to User1)
 function deleteUser2Messages() {
     fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
         method: 'DELETE',
