@@ -80,10 +80,10 @@ document.getElementById('messageText').addEventListener('keydown', function(even
     }
 });
 
-// Add event listener for the Send button
-// document.getElementById("sendButton").addEventListener("click", function() {
-//     sendMessage();
-// });
+Add event listener for the Send button
+document.getElementById("sendButton").addEventListener("click", function() {
+    sendMessage();
+});
 
 
 // Delete User2's messages (available only to User1)
