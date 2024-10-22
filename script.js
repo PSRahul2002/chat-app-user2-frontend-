@@ -106,4 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Error deleting messages:", error);
         });
     }
+    
+    document.getElementById("deleteUser2Messages").addEventListener("click", function() {
+        deleteUser2Messages();  // Deletes User2's messages
+    });
 });
