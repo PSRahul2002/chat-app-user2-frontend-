@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Delete User2's messages
     function deleteUser2Messages() {
+        console.log("Delete User2 Messages button clicked!");  // Debugging log
         fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
             method: 'DELETE',
             headers: {
