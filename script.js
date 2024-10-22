@@ -35,17 +35,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // Add event listener for 'Enter' key press on the input field (inside DOMContentLoaded)
+    // Add event listener for 'Enter' key press on the input field
     document.getElementById('messageText').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             event.preventDefault();  // Prevent form submission
-            sendMessage();  // Calls sendMessage, which should be outside DOMContentLoaded
+            sendMessage();  // Calls sendMessage
         }
     });
 
-    // Add event listener for the Send button (inside DOMContentLoaded)
+    // Add event listener for the Send button
     document.getElementById("sendButton").addEventListener("click", function() {
-        sendMessage();  // Calls sendMessage, which should be outside DOMContentLoaded
+        sendMessage();  // Calls sendMessage
     });
 });
 
