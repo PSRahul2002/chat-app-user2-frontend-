@@ -80,7 +80,7 @@ document.getElementById('messageText').addEventListener('keydown', function(even
     }
 });
 
-Add event listener for the Send button
+//Add event listener for the Send button
 document.getElementById("sendButton").addEventListener("click", function() {
     sendMessage();
 });
