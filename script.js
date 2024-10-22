@@ -1,6 +1,10 @@
+// Declare WebSocket and currentUserId in the global scope
+let currentUserId = 1;  // Change to 2 for User2
+let ws;
+
 document.addEventListener("DOMContentLoaded", function() {
-    let currentUserId = 1;  // Change to 2 for User2
-    let ws = new WebSocket(`wss://chat-app-backend-2-9wz8.onrender.com/ws/${currentUserId}`);
+    // Initialize WebSocket
+    ws = new WebSocket(`wss://chat-app-backend-2-9wz8.onrender.com/ws/${currentUserId}`);
 
     // Show the delete button for User1
     if (currentUserId === 1) {
@@ -30,39 +34,22 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Error parsing WebSocket message:", e);
         }
     };
-    // Add event listener for 'Enter' key press on the input field
+
+    // Add event listener for 'Enter' key press on the input field (inside DOMContentLoaded)
     document.getElementById('messageText').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             event.preventDefault();  // Prevent form submission
-            sendMessage();
+            sendMessage();  // Calls sendMessage, which should be outside DOMContentLoaded
         }
     });
-    
-    //Add event listener for the Send button
-    document.getElementById("sendButton").addEventListener("click", function() {
-        sendMessage();
-    });
 
+    // Add event listener for the Send button (inside DOMContentLoaded)
+    document.getElementById("sendButton").addEventListener("click", function() {
+        sendMessage();  // Calls sendMessage, which should be outside DOMContentLoaded
+    });
 });
 
-// Handle sending messages
-function sendMessage() {
-    let input = document.getElementById("messageText");
-    let message = input.value;
-
-    if (message) {
-        // Display the message on the page before sending it
-        appendMessage(currentUserId, message, currentUserId);  // Show 'You' for the current user's message
-
-        // Send the message via WebSocket
-        ws.send(JSON.stringify({ user_id: currentUserId, message }));
-
-        // Clear the input field
-        input.value = '';
-    }
-}
-
-// Function to append messages to the message list with correct CSS and username
+// Function to append messages to the message list
 function appendMessage(userId, messageText, currentUserId) {
     let messages = document.getElementById('messages');
     let message = document.createElement('div');
@@ -85,7 +72,24 @@ function appendMessage(userId, messageText, currentUserId) {
     messages.scrollTop = messages.scrollHeight;
 }
 
-// Delete User2's messages (available only to User1)
+// Handle sending messages
+function sendMessage() {
+    let input = document.getElementById("messageText");
+    let message = input.value;
+
+    if (message) {
+        // Display the message on the page before sending it
+        appendMessage(currentUserId, message, currentUserId);  // Show 'You' for the current user's message
+
+        // Send the message via WebSocket
+        ws.send(JSON.stringify({ user_id: currentUserId, message }));
+
+        // Clear the input field
+        input.value = '';
+    }
+}
+
+// Delete User2's messages
 function deleteUser2Messages() {
     fetch('https://chat-app-backend-2-9wz8.onrender.com/delete_user2_messages?user_id=1', {  // Ensure the correct URL
         method: 'DELETE',
